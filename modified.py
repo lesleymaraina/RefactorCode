@@ -37,9 +37,9 @@ def pop_tweets(path):
     
     tweets['text'] = list(map(lambda tweet: tweet['text'], tweets_data))
     tweets['latt'] = list(map(lambda tweet: tweet['coordinates']['coordinates'][0]
-                              if tweet['coordinates'] != None else NaN, tweets_data))
-                              tweets['long'] = list(map(lambda tweet: tweet['coordinates']['coordinates'][1]
-                                                        if tweet['coordinates'] != None else NaN, tweets_data))
+                        if tweet['coordinates'] != None else NaN, tweets_data))
+    tweets['long'] = list(map(lambda tweet: tweet['coordinates']['coordinates'][1]
+                        if tweet['coordinates'] != None else NaN, tweets_data))
                               
     return tweets[tweets.latt.notnull()]
 
